@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report slip portal</title>
+    <link rel="stylesheet" href="style/reportsheet portal.css">
+  </head>
+  <body>
+  <div class="container">
+    <a href="index.html" class="back-btn">← Back to Home</a>
+
+    <div class="payment-box">
+      <h2>Result Checker Portal</h2>
+
+      <p>
+        Welcome to the Student Result Checker Portal.
+        Enter your valid Result Checker PIN/Code below to access your examination result.
+      </p>
+
+      <p class="note">
+        <strong>Note:</strong> Each Result Checker PIN can only be used according to the school's policy. If you do not have a valid PIN or experience any issues, please contact the school administration for assistance.
+      </p>
+    </div>
+
+    <hr />
+
+    <div class="checker-box">
+      <h3>Check Your Result</h3>
+
+      <p>Please enter your Result Checker PIN/Code below:</p>
+      
+        <input type="text" id="code" placeholder="Enter your result code" />
+        <button onclick="checkResult()">Check Result</button>
+      
+      </div>
+    </div>
+
+    <script>
+const results = {
+  "mack": "reportsheet000.html",
+  
+};
+
+function checkResult() {
+  let code = document.getElementById("code").value.trim();
+
+  if (results[code]) {
+    window.location.href = results[code];
+  } else {
+    alert("Invalid Result Checker PIN/Code. Please confirm and try again.");
+  }
+}
+</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FATfIELD INTERNATIONAL SCHOOLS</title>
+    <link rel="stylesheet" href="style/open.css" />
+  </head>
+
+  <body>
+    <header class="school-header">FATfIELD INTERNATIONAL SCHOOLS</header>
+
+    <div class="main-layout">
+      <!-- Center Logo/Video Background -->
+      <div class="center-content">
+        <video autoplay muted loop playsinline>
+          <source src="data/fs.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-text">
+          <h1>Welcome to FATfIELD INTERNATIONAL SCHOOLS</h1>
+
+          <p>Nourished to Flourish</p>
+
+          <a href="#">Explore Our School</a>
+        </div>
+      </div>
+
+      <!-- Floating Left Menu -->
+      <div class="left-panel">
+        <a href="Home.html">Home</a>
+        <a href="Student Services.html">Student Services</a>
+        <a href="Finance.html">Scheme of Work</a>
+        <a href="Academics.html">Academics</a>
+        <a href="Teacher Portal.html">Teacher Portal</a>
+        <a href="ReportsheetPortal.html">Examination</a>
+        <a href="Parent Portal.html">Parent Portal</a>
+        <a href="Downloads.html">Downloads</a>
+        <a href="School TV Channel.html">School TV Channel</a>
+        <a href="Account.html">Account</a>
+        <a href="Games.html">Games</a>
+      </div>
+    </div>
+    <script>
+      let lastScroll = 0;
+
+      const header = document.querySelector("header");
+      const leftPanel = document.querySelector(".left-panel");
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+
+        // Always show them near the top
+        if (currentScroll < 100) {
+          header.classList.remove("hide");
+          leftPanel.classList.remove("hide");
+
+          lastScroll = currentScroll;
+          return;
+        }
+
+        // Hide while scrolling down
+        if (currentScroll > lastScroll) {
+          header.classList.add("hide");
+          leftPanel.classList.add("hide");
+        } else {
+          // Show while scrolling up
+          header.classList.remove("hide");
+          leftPanel.classList.remove("hide");
+        }
+
+        lastScroll = currentScroll;
+      });
+    </script>
+  </body>
+</html>
